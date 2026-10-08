@@ -27,4 +27,59 @@ void AStarPlanner::findPath(){
     startNode.f = startNode.g + startNode.h;
     startNode.parentX = -1;
     startNode.parentY = -1;
+    Node currentNode;
+   Directions right;
+   right.x = 1;
+   right.y = 0;
+   direction.push_back(right);
+   Directions left;
+   left.x = -1;
+   left.y = 0;
+   direction.push_back(left);
+   Directions top;
+   top.x = 0;
+   top.y = 1;
+   direction.push_back(top);
+   Directions down;
+   down.x = 0;
+   down.y = -1;
+   direction.push_back(down);
+
+
+    openList.push_back(startNode);
+    while(!openList.empty()){
+        int lowestIndex = 0;
+        for(int i = 1 ; i < openList.size() ; i++){
+            if(openList[i].f < openList[lowestIndex].f){
+                lowestIndex = i;
+            }
+        }
+        currentNode = openList[lowestIndex];
+        openList.erase(openList.begin() + lowestIndex);
+        closedList.push_back(currentNode);
+        if (currentNode.x == goalX && currentNode.y == goalY){
+            return;
+        }
+        else{
+            for(int i =0; i < direction.size() ; i++ ){
+                int neighborX = currentNode.x + direction[i].x;
+                int neighborY = currentNode.y +direction [i].y;
+                if( neighborX >= 0 && neighborX <map[0].size() && neighborY >= 0 && neighborY < map.size()){
+                    if (map[neighborY][neighborX] == 0){
+                        if(!alreadyclosed){
+                            
+                        }
+                        
+
+                    }
+
+                }
+                
+
+            }
+            
+        }
+    }
+   
+    
 }

@@ -22,8 +22,15 @@ class AStarPlanner{
         int parentX;
         int parentY;
     };
+    struct Directions{
+        int x;
+        int y;
+    };
     std::vector<Node> openList;
     std::vector<Node> closedList;
+    std::vector<Directions> direction;
+
+
     int heuristicCalculator(
         int x,
         int y
