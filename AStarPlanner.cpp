@@ -66,9 +66,18 @@ void AStarPlanner::findPath(){
                 int neighborY = currentNode.y +direction [i].y;
                 if( neighborX >= 0 && neighborX <map[0].size() && neighborY >= 0 && neighborY < map.size()){
                     if (map[neighborY][neighborX] == 0){
-                        if(!alreadyclosed){
-                            
+                        bool alreadyClosed = false;
+                        for(int j = 0; j < closedList.size();j++){
+                            if(closedList[j].x == neighborX && closedList[j].y == neighborY){
+                                alreadyClosed = true;
+                            }
                         }
+                    if(alreadyClosed != true){
+                        Node neighborNode;
+                        neighborNode.x = neighborX;
+                        neighborNode.y = neighborY;
+                                    
+                                }
                         
 
                     }
