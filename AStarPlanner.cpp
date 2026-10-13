@@ -76,6 +76,14 @@ void AStarPlanner::findPath(){
                         Node neighborNode;
                         neighborNode.x = neighborX;
                         neighborNode.y = neighborY;
+                        neighborNode.g = currentNode.g + 1;
+                        neighborNode.h = heuristicCalculator(neighborNode.x, neighborNode.y);
+                        neighborNode.f = neighborNode.g + neighborNode.h;
+                        neighborNode.parentX = currentNode.x;
+                        neighborNode.parentY = currentNode.y;
+                        
+
+
                                     
                                 }
                         
