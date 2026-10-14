@@ -45,7 +45,7 @@ class AStarPlanner{
     const std::vector<std::vector<int>>& map
     );
 
-    void findPath();
+    std::vector<std::vector<int>> findPath();
 };
 
 
