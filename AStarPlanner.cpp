@@ -1,5 +1,6 @@
 #include "AStarPlanner.h"
 #include <cmath>
+#include <algorithm>
 AStarPlanner::AStarPlanner(
         int startX,
     int startY,
@@ -73,6 +74,8 @@ std::vector<std::vector<int>> AStarPlanner::findPath(){
                 }
             }
         }
+        std::reverse(path.begin(),path.end());
+        return path;
            
         }
         else{
@@ -125,7 +128,9 @@ std::vector<std::vector<int>> AStarPlanner::findPath(){
             }
             
         }
+        
     }
+    return path;
    
     
 }
